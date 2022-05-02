@@ -1,0 +1,255 @@
+---
+title: "RandomExperiments"
+author: "Michiel van Eldik"
+date: "4/17/2022"
+output: html_document
+---
+
+# 1.3 Random Experiments and Probabilities
+
+## 1.3.1 Random Experiments
+
+Before rolling a die, you don't know the result. This is a __random experiment__. A random experiment is a process by which we observe something uncertain. 
+
+* __outcome:__ is a result of a random experiment.
+* __sample space:__ the set of all possible outcomes. It is basically our __universal set__
+
+When we repeat a __random experiment__ several times, we call each iteration a __trial__.
+
+---
+
+__Example__ 
+We toss a coin three times and observe the sequence of heads/tails. The sample space here may be defined as...
+$$S = \{(H,H,H),(H,H,T),(H,T,H),(T,H,H),(H,T,T),(T,H,T),(T,T,H),(T,T,T)\}$$
+
+---
+
+Our goal is to assign __probability__ to certain __events__. Suppose we would like to know the probability that the outcome of rolling a fair die is an even number. In this case, our event is the set $E = \{2,4,6\}$. If the result of our random experiment belongs to set $E$, we say that the event $E$ has occurred. 
+
+In sum
+
+* Outcome: A result of a random experiment
+* Sample space: The set of all possible outcomes.
+* Event: A subset of the sample space.
+
+__Union and Intersection__
+
+If $A$ and $B$ are events, then $A \cup B$ and $A \cap B$ are also events. 
+
+* $A \cup B$ occurs when $A$ or $B$ occur. 
+* $A \cap B$ occurs when $A$ and $B$ occur. 
+
+## 1.3.2 Probability
+
+We assign a __Probability__ measure $P(A)$ to event $A$. The value is between $0$ and $1$ that shows how likely the event is. 
+
+The main subject of probability theory is to develop tools and techniques ti calculate probabilities of different events.
+
+Probability theory is based on some axioms that act as the foundation for the theory. 
+
+
+__Axioms of Probability__ 
+
+\
+
+ __Axiom 1:__ For any event $A$, $P(A) \ge 0$
+
+* Probability cannot be negative
+* The smallest probability for an event is zero. 
+* If $P(A)$ is zero, the event will never happen. 
+
+
+ __Axiom 2:__ Probability of the sample space $S$ is $P(S) = 1$.
+
+* The sample space contains all possible outcomes of a random experiment.
+* The outcome of each trail always belongs to $S$.
+* In the example of rolling a die, $S = \{1,2,3,4,5,6\}$. Whatever you throw, it will always be in the sample space, hence $P(S)=1$.
+
+
+__Axiom 3:__ If $A_1,A_2,A_3,...$ are disjoint events, then $P(A_1 \cup A_2 \cup A_3 ...) = P(A_1)+P(A_2)+P(A_3)+ ...$
+
+* The events are disjoint (No overlap), the probability of the union must be the summations of the probabilities. 
+* If several sets are disjoint, then the total area of their union is the sum of individual areas.
+* For example, in a presidential elections, there are four candidates, A, B, C, D. We think that A has a 20 percent chance of winning, B 40 percent. The probability of A and B winning the election is then 60 percent. We can say this because there can only be one winner, so all events are disjoint.
+
+In summary, If $A_1$ and $A_2$ are disjoint events, then $P(A_1 \cup A_2) = P(A_1) + P(A_2)$. The same is true for $A_n$:
+
+---
+
+When working with events, _intersection_ means "and" and _union_ means "or". The probability of intersection of $A and B$ a.k.a. $(A \cap B)$ is sometimes shown as $P(A,B)$ or $P(AB)$.
+
+\
+
+Notation:
+
+* $P(A \cap B) = P(A and B) = P(A,B)$
+* $P(A \cup B) = P(A or B)$
+
+
+## 1.3.3 Finding Probabilities
+
+Suppose that we are given a random experiment with a sample space $S$. To find the probability of an event, there are usually two steps:
+
+* First, we use the specific information that we have about the random experiment.
+* Second, we use the probability axioms.
+
+You should try to use the steps.
+
+---
+
+Example, you roll a fair die. What is the probability of even $E = {1,5}$? 
+
+* We have a random experiment, and the die is fair, which means that all six possible outcomes are equally likely, $P(\{1\}) = P(\{2\}) = , ..., = P(\{6\}).$
+* Now we can use the axioms of probability. In particular, since the events are disjoint, we can write.
+
+
+$$\begin{aligned}1 &= P(S) \\& = P(\{1\} \cup \{2\} \cup ... \cup \{6\}) \\ &= P(\{1\}) + P(\{2\}) + ... + P(\{6\}) \\ &= 6P(\{1\})\end{aligned}$$
+
+In other words, \
+
+* The probability of the sample space is one
+* One equals the probability of throwing one or two or three,..., etc.
+* Events are conjoined, so sum of probability of conjoint events equals 1. 
+* This equates to 6 times the probability of throwing a one (or any other event for that matter).
+
+Hence,
+
+$$P(\{1\}) = P(\{2\}) = ... = P(\{6\}) = \frac{1}{6}$$
+
+Again, since $\{1\}$ and $\{5\}$ are disjoint, we have...
+
+$$P(E) = P(\{1,5\})=P(\{1\})+P(\{5\}) = \frac{2}{6} = \frac{1}{3}$$
+
+The probability that what you throw with a fair die is in the set $E$, $E = \{1,5\}$.
+
+\
+
+__Note:__ We often write simply $P(1)$, instead of $P(\{1\})$. The latter is the official notation because define probability for sets (events) not for individual outcomes. So when we write $P(2) = \frac{1}{6}$, what we really mean is that $P(\{2\}) = \frac{1}{2}$.
+
+
+---
+
+__Example__
+Use the axioms of probability, prove the following:
+
+### Example 1. 
+
+For any event $A$, $P(A^c) = 1 - P(A)$.
+
+In normal words, for any event $A$, the compliment of the probability of that event is the same as 1 minus the probability of that event. 
+
+$$\begin{aligned} 1 &= P(S)  \\ &= P(A \cup A^c) \\ &= P(A) + P(A^c) \\ 1-P(A) &= P(A^c)   \end{aligned}$$
+
+* Axiom 2 states that the probability of the sample space is 1.
+* The complement definition states that the probability of the sample space equals the probability of $A$ and complement of A, $A^c$. 
+* Axiom 3 states that in case of disjoint events, the sum of probability of events equals the union of those events.
+
+---
+
+### Example 2.
+
+The probability of the empty set is zero, i.e., $P(\emptyset) = 0$
+
+$$\begin{aligned} \emptyset &= S^s \\ P(\emptyset) &= 1 - P(S) \\ = 0 \end{aligned}$$
+
+This makes sense by definition: an event happens if the outcome of the random experiment belongs to that event. For instance in previous example, event $E$ happens if we throw 1 or 5, $E = \{1, 5\}$. In case of an empty set, there is no element. So the outcome of the experiment never belongs to the empty set.
+
+### Example 3.
+
+For any event, $A$, $P(A) \leq 1$.
+
+* Firstly, $P(A) = 1 - P(A^c)$
+* Secondly, $P(A^c) \geq 0$ (first axiom)
+
+So logically speaking we are looking at $P(A)$ equals to 1 minus something that is larger than zero. So that implies that because of the first axiom defining the bounds of complement of $A$, we know that there is never a possibility that $P(A)$ is less than zero.
+
+### Example 4.
+
+Prove that $P(A-B) = P(A) - P(A \cup B)$.
+
+$$P(A) = P(A \cup B) + P(A - B).$$
+
+
+### Example 5.
+
+### Example 6.
+
+### Example last.
+
+* 60% chance of rain today
+* 50% chance of rain tomorrow
+* 30% chance of no rain on either day.
+
+So... 
+
+* Probability of no rain today = 0.4
+* Probability of no rain tomorrow = 0.5
+* Probability of no rain today and no rain tomorrow = 
+
+Solution...
+
+---
+
+
+NOT FINISHED THE HOMEWORK YET! 
+
+NOT FINISHED THE HOMEWORK YET! 
+
+
+FINISH HOMEWORK!
+
+## 1.3.4 Discrete Probability Models
+
+We distinguish between two types of sample spaces: __discrete__ and __continuous__.
+
+In this case, since $S$ is countable, we can list all elements in $S$: 
+
+$$S = \{ s_1, s_2, s_3,...,s_n\}$$
+
+
+If $A \subset S$ ($A$ subset of $S$) is an event, then $A$ is also countable and by the third axiom of probability we can write:
+
+$$\begin{aligned} P(A) &= P(\bigcup_{s_j \in A}\{s_j\} \\
+&= \sum_{s_j \in A} P(s_j) \end{aligned}$$
+Which basically translates to...
+
+* Probability of event A equates to the probability of the union of all elements $s_j$ in set $A$.
+* Using the third axiom, this equates to the sum of the probability of those events.
+
+In countable sample space, to find probability of an event, all we need to do is sum up the probability of individual elements in that set.
+
+
+---
+
+__Finite Sample Spaces with Equally Likely Outcomes:__
+This is for example rolling a fair die. 
+
+$$S = \{s_1,s_2, ..., s_N\}, \ where P(s_i) = P(s_j) \ for \ all \ i, j \in \{1,2,...,N\}$$
+In other words, for the sample space $S$ of rolling a die, where in this case, $N = 6$, then the probability of finding one outcome $P(s_i)$ is equal to another outcome $P(s_j)$, given that both outcomes are part of the possible set.
+
+The probability of an outcome $i$ rolling a fair die $s$ is then $P(s_i) = \frac{1}{N}, \ for \ all \ i \in \{1,2,...,N\}$.
+
+
+__Cardinality__ is the number of elements in a set.
+
+In such a model, if $A$ is any event with cardinality $|A| = M$, we can write:
+
+$$P(A)=\sum_{s_j \in A} P(s_j)=\sum_{s_j \in A} \frac{1}{N}=\frac{M}{N}=\frac{|A|} {|S|}$$
+
+Step by step, this says:
+
+* Probability of event $A$ equals the sum of the probabilities of all outcomes that are part of set $A$.
+* This equals to the sum of 1 divided by $N$, with $N$ being the number of elements in the Sample space.
+* This summation is the same as dividing the cardinality of $A$ by all possible outcomes.
+* Thus, we can say that probability of event $A$ is the same as cardinality of $A$ divided by the cardinality of the sample space.
+
+Hence, in a finite sample space...
+
+$$P(A) = \frac{|A|}{|S|}$$
+
+## 1.3.5. Continuous Probability Models
+
+MOET NOG AF
+
+
+

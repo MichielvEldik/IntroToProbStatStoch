@@ -5,6 +5,8 @@ date: "4/17/2022"
 output: html_document
 ---
 
+# 1.2 Review of Set Theory
+
 ## 1.2.0 Review
 
 \
@@ -300,6 +302,7 @@ Consider the function $g: \{H,T\} \rightarrow \{0, 1\}$ is defined as $g(H) = 0$
 ---
 
 To summarize
+
 * What can go __into__ a function is called the __Domain__
 * What can __possibly come out__ of a function is called the __Co-domain__
 * The set of elements that get pointed to in $B$ (the actual values produced by the function) are the __Range__, also called the image.

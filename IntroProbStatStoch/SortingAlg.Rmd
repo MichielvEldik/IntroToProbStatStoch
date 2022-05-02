@@ -1,4 +1,4 @@
----
+----
 title: "TryReticulate"
 author: "Michiel van Eldik"
 date: "4/17/2022"
@@ -15,7 +15,8 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{python}
+```{python }
+
 def insertionSort(arr):
   for i in range(1, len(arr)):
     j = i
@@ -25,5 +26,24 @@ def insertionSort(arr):
 arr = [2, 4, 1, 3]
 insertionSort(arr)
 print(arr)
+
 ```
+
+
+```{python }
+
+def insertionSort(arr):
+  for i in range(1, len(arr)):
+    j = i
+    while arr[j -1] > arr[j] and j > 0:
+      arr[j -1], arr[j] = arr[j], arr[j-1]
+      j -= 1
+arr = [2, 4, 1, 3]
+insertionSort(arr)
+print(arr)
+
+```
+
+
+
 
