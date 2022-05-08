@@ -1,0 +1,55 @@
+---
+title: "Conditional Probability"
+author: "Michiel van Eldik"
+date: "5/2/2022"
+output: html_document
+---
+
+
+
+
+# 1.4 Condition Probability
+
+
+This is one of the most fundamental concepts in probability theory.
+
+\
+
+It is based on the question: as you obtain additional information, how should you update probabilities of events?
+
+\
+
+E.g., we say that in a certain city, the probability of rain is 23 percent. However, now we also see that it is cloudy. Do we still believe it is 23 percent chance of raining? No, we say: What is the probability that it rains __given that__ it is cloudy.
+
+\
+
+Let's say $C$ means that it is cloudy, then we write $P(R|C)$. It is reasonable to assume that in this example, $P(R|C)$ should be larger than $P(R)$. In this case, $P(R)$ is the __prior probability__ of $R$. 
+
+---
+
+__Example:__
+
+Let $A$ be the event that the outcome is an odd number for rolling a fair die, i.e., $A = \{1,3,5\}$. Also, let $B$ be the event with outcomes equal to or lower than $3$, i.e., $B = \{1,2,3\}$. What is the probability of $A$, $P(A)$? Or... we may ask, what is the probability of $A$, given that $B$, $P(A|B)$?
+
+Because it is a finite sample space, we can use $P(A) = \frac{|A|}{|S|}$. Now we just need to plug in the numbers.
+
+* $|A| = |{1,3,5}| = 3$
+* $|S| = 6$
+
+$$P(A) = \frac{|A|}{|S|}=\frac{|\{1,3,5\}|}{6}=\frac{1}{2}$$
+
+So we know the __prior probability__ of $A$. But we are not there yet, because we want to find the __conditional probability__.
+
+* Conditional probability means the probability of $A$, given that $B$ has occurred.
+* If we know $B$ has occurred, the outcome must be among $\{1,2,3\}$.
+* For $A$ to also happen, the outcome must be in $A \cap B$ which equals $\{1,3\}$.
+
+Thus we argue...
+
+$$P(A|B)=\frac{|A \cap B|}{|B|} = \frac{2}{3}$$
+
+Why divided by cardinality of $B$ and not $S$? Because $B$ is basically our sample space. Because we have the information that $B$ has occurred, so that will  be $1$. However, we just don't know which one of $B$, and whether it coincides with $A$. 
+
+----
+
+

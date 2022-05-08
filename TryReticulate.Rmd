@@ -1,0 +1,19 @@
+---
+title: "Try Reticulate"
+author: "Michiel van Eldik"
+date: "4/17/2022"
+output: html_document
+---
+
+
+
+
+```{r message=FALSE, warning=FALSE}
+library(reticulate)
+
+```
+
+```{python }
+
+print("Hello, world!")
+```

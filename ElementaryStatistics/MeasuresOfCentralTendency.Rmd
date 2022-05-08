@@ -1,0 +1,144 @@
+---
+title: "Measures of Central Tendency"
+author: "Michiel van Eldik"
+date: "05/07/2022"
+output: html_document
+---
+
+#  Measures of Central Tendency
+
+```{r } 
+library(reticulate)  
+```
+
+
+## The Mean
+
+The mean is also known as the arithmetic average. 
+
+$$A = \frac{1}{n}\sum_{i=1}^{n}a_i$$
+Where...
+
+* $A$ = arithmetic mean
+* $n$ = number of values
+* $a_i$ = data set values.
+
+### Advantages of the Mean
+
+* Simple to understand
+* Easy to compute
+* No need to sort the data
+* Affected by the value of every item in the series. Unlike median or mode, which only take in some of the data values. But mostly the frequency of those values.
+* It is capable of further algebraic treatment. E.g., if we find the mean and sizes of two groups, we can find the algebraic formula of the combined group. This is not possible for median or mode.
+* The average occurs in important theorems such as the central limit theorem, which is widely used in statistics.
+
+### Disadvantages of the Mean
+
+* You can't observe it easily with the 'naked eye' when looking at the data (such as with the mode).
+* It can't be located graphically, such as with the median.
+* Modes still work with missing data. If we see eleven one's occurring out of a dataset with 20, and one value is missing, we still can calculate the mode. Not the mean. 
+* In asymmetrical / skewed distributions, the mean is not a suitable measure for the central value of the data.
+* The mean is sensitive to the presence of extreme values.
+* Two same means can tell a very different story. It does not give the full picture of a situation.
+
+### Implementation in Python
+
+```{python }
+dataset = [1, 4, 3, 6, 88, 20, 3]
+
+def FindMean(dataset):
+    total = 0
+    cardinal = 0
+    for i in dataset:
+        total = total + i
+        cardinal = cardinal + 1
+    mean = total / cardinal
+    return mean
+
+
+mean = FindMean(dataset) 
+```
+
+```{python }
+print("We work with the following dataset...")
+for i in dataset:
+    print(i)
+print("The mean of this dataset is {0}".format(mean))
+```
+
+## The Median
+
+If $n$ is odd, the median is the middle number.
+
+$$median = (\frac{n+1}{2})^{th} observation$$
+
+If $n$ is even,
+The median is the simple average of the two middle numbers.
+
+$$median = \frac{\frac{n^{th}}{2} \ obs+(\frac{n}{2}+1)^{th} \ obs}{2}$$
+
+
+### Implementation in Python
+
+
+```{python }
+
+even_n = [1,3,6,7,8,9]
+odd_n = [1,4,6,8,8]
+
+def InsertionSort(dataset):
+    # Traverse through the dataset except index 0
+    for i in range(1, len(dataset)):
+            # Key is the value at index i.
+            key = dataset[i]
+            # The index next to the current index (to the left)
+            j = i - 1
+            # stop iterating when we reach 0 on our j because that is the bounds of our list
+            # also stop when our key is bigger than our j. That part is then already sorted.
+            while j >= 0 and key < dataset[j]:
+                dataset[j+1] = dataset[j]
+                j -= 1
+            dataset[j+1] = key
+    return dataset
+
+def Median(dataset):
+    dataset = InsertionSort(dataset)
+    counter = 0
+    for i in dataset:
+        counter += 1
+
+    if (counter % 2) == 0:
+        middle_1 = int((counter / 2)-1)
+        middle_2 = int(middle_1 + 1)
+        median_even = (dataset[middle_1] + dataset[middle_2]) / 2
+        return median_even
+
+    else:
+        counter = counter + 1
+        counter = counter - 1 # To deal with index starting at zero.
+        index = int(counter / 2)
+        return dataset[index]
+answer = Median(even_n)
+answer_2 = Median(odd_n)
+print("Median is {0}".format(answer))
+print("Median is {0}".format(answer_2))
+```
+
+## The mode
+
+The value that occurs most often in the data is the mode.
+
+$$L + h \frac{(f_m-f_1)}{(f_m-f_1)+(f_m-f_2)}$$
+
+* $L$ is the lower limit of the modal class
+* $h$ is the size of the class interval
+* $f_m$ is the frequency of the modal class
+* $f_1$ is the frequency of the class preceding the modal class.
+* $f_2$ is the frequency of the class succeeding the modal class.
+
+
+## The midrange
+
+## The weighted mean 
+
+

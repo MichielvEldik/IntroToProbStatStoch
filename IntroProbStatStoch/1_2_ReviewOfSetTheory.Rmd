@@ -260,6 +260,78 @@ Next, we need to add the intersections that we took out too much, just like in t
 
 ---
 
+__Infinite Sets:__
+
+
+We should distinguish between two types of infinite sets, one of which is far larger.
+Sets such as $N$ and $Z$ are __countable__. Sets such as __R__ are "bigger" but __uncountable__. The difference, we can list __countable__ elements, but you can't list __uncountable__ elements.
+
+\
+
+Where does infinite sets come in?
+
+* __countably infinite sets__
+* __uncountably infinite sets__
+
+\
+
+__Definition 1.1__
+
+Set _A_ is called countable if the following is true:
+
+* if it is a finite set, $|A| < \infty$; or...
+* It can be put in one-to-one correspondence with natural numbers $N$, in which case the set is said to be countably infinite. (A set is called uncountable if it is not countable).
+
+\
+
+Guidelines for determining this.
+
+* $N$ (Natural numbers)  , $Z$ (Integers), $Q$ (Rational numbers).
+* Any set containing an interval on the real line, such as $\[a,b\]$ where $a < b$ is uncountable. 
+
+---
+
+__Theorem 1.3__
+
+* Any subset of a countable set is countable.
+* Any superset of an uncountable set is uncountable. 
+
+_Proof_ 
+
+Let $A$ be a countable set and $B \subset A$ ($B$ is a subset of $A$). If $A$ is a finite set, then $|B| \leq |A| < \infty$. Thus, $B$ is countable. If $A$ is countably infinite, then we can list the elements in $A$, then by removing elements in the list that are not in $B$, we can obtain a list for $B$, thus $B$ is countable.
+
+\
+
+The second part of the theorem can be proved by using the first part. Assume $B$ is uncountable. If $B \subset A$ and $A$ is countable, by the first part of the theorem $B$ is also a countable set which is a contradiction. 
+
+---
+
+__Theorem 1.4__
+
+If $A_1, A_2, ...$ is a list of countable sets, then the set $\bigcup_{i} A_i=A_1 \cup A_2 \cup A_3 ...$ is also countable.
+
+\
+
+_Proof_
+
+It suffices to create a list of elements in $\bigcup_{i} A_i$. Since each $A_1$ is countable we can list its elements $A_1 = \{a_{i1}, a_{i2},...$ where $i$ is the set identifier. Thus we have.
+
+* $A_1 = \{a_{11}, a_{12},...\}$
+* $A_2 = \{a_{21}, a_{22},...\}$
+* $A_3 = \{a_{31}, a_{32},...\}$,
+* ...
+
+What's next? Make a list that contains all the above lists. And this list is countable. Done!
+
+---
+
+__Theorem 1.5__
+
+If $A$ and $B$ are countable, then $A \times B$ is also countable. 
+
+
+
+
 ### Exercise
 
 * There are 10 people with white shirts and 8 people with red shirts;
